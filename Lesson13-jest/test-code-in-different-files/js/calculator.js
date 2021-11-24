@@ -1,4 +1,4 @@
-export const getSquaresNumbers = arr => arr.map(num => num ** 2);
+export const getSquareArray = arr => arr.map(num => num ** 2);
 
 export const getOddNumbers = arr => arr.filter(num => num % 2 === 1);
 
