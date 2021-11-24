@@ -1,4 +1,4 @@
-import getSum, { getSquaresNumbers, getOddNumbers } from './script';
+import getSum, { getSquaresNumbers, getOddNumbers } from './calculator';
 
 it('getSquaresNumbers should get squares', () => {
   const result = getSquaresNumbers([1, 2, 3]);
