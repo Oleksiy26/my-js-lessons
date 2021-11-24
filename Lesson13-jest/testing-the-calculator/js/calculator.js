@@ -19,7 +19,6 @@ export const calc = expression => {
     case '/':
       result = +a / +b;
       break;
-    default:
   }
 
   return `${expression} = ${result}`;
