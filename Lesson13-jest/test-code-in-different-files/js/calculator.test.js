@@ -12,5 +12,5 @@ it('getOddNumbers should keeps odd numbers only', () => {
 
 it('should get sum of numbers', () => {
   const result = getSum(8, 4);
-  expect(result).toEqual(12);
+  expect(result).toEqual(1);
 });
