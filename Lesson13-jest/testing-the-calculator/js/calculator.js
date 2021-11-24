@@ -1,3 +1,5 @@
+/* eslint-disable default-case */
+
 export const calc = expression => {
   if (typeof expression !== 'string') {
     return null;
