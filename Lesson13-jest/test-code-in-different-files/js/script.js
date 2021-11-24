@@ -1,18 +1,5 @@
-const countOccurrences = (text, str) => {
-  if (str.length === 0) {
-    return null;
-  }
-  let count = 0;
-  for (let i = 0; i < text.length; i += 1) {
-    const entry = text.indexOf(str, i);
-    if (entry !== -1) {
-      i = entry;
-      count += 1;
-    }
-  }
+export const getSquaresNumbers = arr => arr.map(num => num ** 2);
 
-  return count;
-};
-const text = 'I play basketball as well as i can';
-const str = 'll';
-console.log(countOccurrences(text, str));
+export const getOddNumbers = arr => arr.filter(num => num % 2 === 1);
+
+export default (a, b) => a + b;
