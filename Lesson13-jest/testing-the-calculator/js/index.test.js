@@ -1,4 +1,4 @@
-import { calc } from './calculator';
+import { calc } from './calculator.js';
 
 it('calc should plus numbers', () => {
   const result = calc('1 + 3');
