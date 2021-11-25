@@ -1,4 +1,4 @@
-export const reverseArray = arr => {
+const reverseArray = arr => {
   if (!Array.isArray(arr)) {
     return null;
   }
@@ -7,7 +7,7 @@ export const reverseArray = arr => {
   return reversed;
 };
 
-export const withdraw = (clients, balances, client, amount) => {
+const withdraw = (clients, balances, client, amount) => {
   const balance = balances.slice('');
   const index = clients.indexOf(client);
   if (index !== -1 && balance[index] < amount) {
@@ -17,7 +17,7 @@ export const withdraw = (clients, balances, client, amount) => {
 };
 console.log(withdraw(['Ann', 'lenin', 'Den'], [950, -2, 0], 'lenin', 50));
 
-export const getAdults = obj => {
+const getAdults = obj => {
   const filter = Object.entries(obj).filter(value => value[1] >= 18);
   const newObj = Object.fromEntries(filter);
   return newObj;

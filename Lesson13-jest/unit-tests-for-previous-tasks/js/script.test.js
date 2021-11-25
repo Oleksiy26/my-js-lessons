@@ -1,4 +1,6 @@
-import { reverseArray, withdraw, getAdults } from './script';
+import { reverseArray } from '../../../Lesson7_arr_methods/array-reverse/js/script';
+import { withdraw } from '../../../Lesson7_arr_methods/withdraw/js/script';
+import { getAdults } from '../../../Lesson8-object-basic/object-filter/js/script';
 
 // --------------------reverseArray--------------------
 

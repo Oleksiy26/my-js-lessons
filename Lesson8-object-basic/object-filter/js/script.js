@@ -21,7 +21,7 @@
 // 2. отфильтровать по условию >=18;
 // 3. Значения удовлетворяющие условию записать в новый массив
 // 4. преобразовать массив в объект с помощью Object.fromEntries
-const getAdults = obj => {
+export const getAdults = obj => {
   const filter = Object.entries(obj).filter(value => value[1] >= 18);
   const newObj = Object.fromEntries(filter);
   return newObj;

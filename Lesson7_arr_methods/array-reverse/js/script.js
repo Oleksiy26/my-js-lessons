@@ -3,7 +3,7 @@
 
 const arr = [1, 2, 3];
 
-const reverseArray = arr => {
+export const reverseArray = arr => {
   if (!Array.isArray(arr)) {
     return null;
   }
