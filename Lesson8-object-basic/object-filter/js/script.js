@@ -5,13 +5,25 @@
 // 2. Проверить значение ключа >=18;
 // 3. Значения удовлетворяющие условию записать в новый объкт
 
+// const getAdults = obj => {
+//   const newObj = {};
+//   for (const value in obj) {
+//     if (obj[value] >= 18) {
+//       newObj[value] = obj[value];
+//     }
+//   }
+//   return newObj;
+// };
+
+// ---------------------refactored----------------
+
+// 1. Перебрать oбъкт в массив
+// 2. отфильтровать по условию >=18;
+// 3. Значения удовлетворяющие условию записать в новый массив
+// 4. преобразовать массив в объект с помощью Object.fromEntries
 const getAdults = obj => {
-  const newObj = {};
-  for (const value in obj) {
-    if (obj[value] >= 18) {
-      newObj[value] = obj[value];
-    }
-  }
+  const filter = Object.entries(obj).filter(value => value[1] >= 18);
+  const newObj = Object.fromEntries(filter);
   return newObj;
 };
 
