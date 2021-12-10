@@ -5,9 +5,8 @@
 
 // setButton('<button>button text</button>');
 
-const setButton = buttonText => {
+export const setButton = buttonText => {
   const parant = document.querySelector('body');
-  parant.innerHTML = buttonText;
+  parant.innerHTML = `<button>${buttonText}</button>`;
 };
-// setButton('<button>button text</button>');
-export { setButton };
+// setButton('button text');
