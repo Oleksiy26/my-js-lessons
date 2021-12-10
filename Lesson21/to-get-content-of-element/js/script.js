@@ -1,35 +1,23 @@
-const vehicle = {
-  name: 'Argo',
-  move() {
-    console.log(`${this.name} is moving`);
-  },
-  stop() {
-    console.log(`${this.name} stopped`);
-  },
-};
-
-const ship = {
-  firstName: 'Adel',
-  startMachine() {
-    console.log(`${this.name} lifting anchor up`);
-    ship.move();
-  },
-  stopMachine() {
-    ship.stop();
-    console.log(`${ship.name} lifting anchor down`);
-  },
-};
-Object.setPrototypeOf(ship, vehicle);
-
-function getOwnProps(obj) {
-  const arrOwnProp = [];
-  for (let prop in obj) {
-    if (obj.hasOwnProperty(prop) && typeof obj[prop] !== 'function') {
-      console.log(prop);
-      arrOwnProp.push(prop);
-    }
-  }
-  return arrOwnProp;
+export function getTitle() {
+  const titleEl = document.querySelector('.title');
+  return titleEl.textContent;
 }
+console.log(getTitle());
 
-console.log(getOwnProps(ship));
+export const getDescription = () => {
+  const paragraphEl = document.querySelector('.about');
+  return paragraphEl.innerText;
+};
+console.log(getDescription());
+
+export const getPlans = () => {
+  const paragraphEl = document.querySelector('.plans');
+  return paragraphEl.innerText;
+};
+console.log(getPlans());
+
+export const getGoal = () => {
+  const paragraphEl = document.querySelector('.goal');
+  return paragraphEl.outerText;
+};
+console.log(getGoal());

@@ -1,35 +1,15 @@
-const vehicle = {
-  name: 'Argo',
-  move() {
-    console.log(`${this.name} is moving`);
-  },
-  stop() {
-    console.log(`${this.name} stopped`);
-  },
+export const getItemsList = () => {
+  const elementsList = document.querySelectorAll('.technology');
+  console.dir(elementsList);
+  return elementsList;
+};
+getItemsList();
+
+export const getItemsArray = () => {
+  const elementsArray = document.querySelectorAll('.tool');
+  console.dir(elementsArray);
+  return elementsArray;
 };
 
-const ship = {
-  firstName: 'Adel',
-  startMachine() {
-    console.log(`${this.name} lifting anchor up`);
-    ship.move();
-  },
-  stopMachine() {
-    ship.stop();
-    console.log(`${ship.name} lifting anchor down`);
-  },
-};
-Object.setPrototypeOf(ship, vehicle);
-
-function getOwnProps(obj) {
-  const arrOwnProp = [];
-  for (let prop in obj) {
-    if (obj.hasOwnProperty(prop) && typeof obj[prop] !== 'function') {
-      console.log(prop);
-      arrOwnProp.push(prop);
-    }
-  }
-  return arrOwnProp;
-}
-
-console.log(getOwnProps(ship));
+const elemArray = Array.from(getItemsArray());
+console.log(elemArray);

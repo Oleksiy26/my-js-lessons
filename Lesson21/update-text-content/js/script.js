@@ -1,18 +1,7 @@
-const user = {
-  firstName: 'John',
-  lastName: 'Doe',
-  get fullName() {
-    return `${this.firstName} ${this.lastName}`;
-  },
-  set fullName(value) {
-    const [firstName, lastName] = value.split(' ');
-    this.firstName = firstName;
-    this.lastName = lastName;
-  },
-};
+export function setTitle(text) {
+  const titleEl = document.querySelector('.title');
+  titleEl.textContent = text;
+  return titleEl.textContent;
+}
 
-export default user;
-
-user.fullName = 'bob jokovich';
-
-console.log(user.firstName);
+console.log(setTitle('I like play football'));
