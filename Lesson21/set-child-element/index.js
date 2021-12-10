@@ -1,9 +1,9 @@
 // const setButton = buttonText => {
 //   const parant = document.querySelector('body');
-//   parant.textContent = buttonText;
+//   parant.textContent = `<button>${buttonText}</button>`;
 // };
 
-// setButton('<button>button text</button>');
+//  setButton('button text');
 
 export const setButton = buttonText => {
   const parant = document.querySelector('body');
