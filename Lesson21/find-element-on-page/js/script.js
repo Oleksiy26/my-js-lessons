@@ -1,18 +1,13 @@
-const user = {
-  firstName: 'John',
-  lastName: 'Doe',
-  get fullName() {
-    return `${this.firstName} ${this.lastName}`;
-  },
-  set fullName(value) {
-    const [firstName, lastName] = value.split(' ');
-    this.firstName = firstName;
-    this.lastName = lastName;
-  },
+const getTitleElement = () => {
+  const titleElem = document.querySelector('.title');
+  console.dir(titleElem);
+  return titleElem;
 };
+getTitleElement();
 
-export default user;
-
-user.fullName = 'bob jokovich';
-
-console.log(user.firstName);
+const getInputElement = () => {
+  const inputElem = document.querySelector('input');
+  console.dir(inputElem);
+  return inputElem;
+};
+getInputElement();
