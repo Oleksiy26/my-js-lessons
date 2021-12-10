@@ -1,7 +1,12 @@
+// const setButton = buttonText => {
+//   const parant = document.querySelector('body');
+//   parant.textContent = buttonText;
+// };
+
+// setButton('<button>button text</button>');
+
 const setButton = buttonText => {
   const parant = document.querySelector('body');
-  console.log(parant);
   parant.innerHTML = buttonText;
 };
-
-console.dir(setButton('<button>buton text</button>'));
+setButton('<button>button text</button>');
