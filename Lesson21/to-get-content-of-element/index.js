@@ -4,17 +4,17 @@ const getTitle = () => {
 };
 
 const getDescription = () => {
-  const paragraphEl = document.querySelector('.about');
-  return paragraphEl.innerText;
+  const about = document.querySelector('.about');
+  return about.innerText;
 };
 
 const getPlans = () => {
-  const paragraphElm = document.querySelector('.plans');
-  return paragraphElm.innerText;
+  const plans = document.querySelector('.plans');
+  return plans.innerText;
 };
 
 const getGoal = () => {
-  const paragraphElem = document.querySelector('.goal');
-  return paragraphElem.outerText;
+  const goal = document.querySelector('.goal');
+  return goal.outerText;
 };
 export { getTitle, getDescription, getPlans, getGoal };
