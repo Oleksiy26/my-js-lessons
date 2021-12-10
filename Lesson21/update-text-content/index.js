@@ -4,4 +4,4 @@ export function setTitle(text) {
   return titleEl.textContent;
 }
 
-console.log(setTitle('I like play football'));
+// console.log(setTitle('I like play football'));
