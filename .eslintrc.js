@@ -28,5 +28,6 @@ module.exports = {
     'import/no-dynamic-require': 0,
     'import/prefer-default-export': 0,
     'prefer-template': 0,
+    'max-classes-per-file': ['error', 5],
   },
 };
