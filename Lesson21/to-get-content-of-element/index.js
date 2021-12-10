@@ -4,20 +4,21 @@ export const getTitle = () => {
 };
 // console.log(getTitle());
 
-// export const getDescription = () => {
-//   const paragraphEl = document.querySelector('.about');
-//   return paragraphEl.innerText;
-// };
-// // console.log(getDescription());
+export const getDescription = () => {
+  const paragraphEl = document.querySelector('.about');
+  return paragraphEl.innerText;
+};
+// console.log(getDescription());
 
 export const getPlans = () => {
   const paragraphElm = document.querySelector('.plans');
-  return paragraphElm.innerText;
+  const text = paragraphElm.innerText;
+  return text;
 };
 // getPlans();
 
-export const getGoal = () => {
-  const paragraphElem = document.querySelector('.goal');
-  return paragraphElem.outerText;
-};
-// getGoal();
+// export const getGoal = () => {
+//   const paragraphElem = document.querySelector('.goal');
+//   return paragraphElem.outerText;
+// };
+// // getGoal();
