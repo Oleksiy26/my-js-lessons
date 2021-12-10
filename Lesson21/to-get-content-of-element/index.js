@@ -11,13 +11,13 @@ export const getDescription = () => {
 // console.log(getDescription());
 
 export const getPlans = () => {
-  const paragraphEl = document.querySelector('.plans');
-  return paragraphEl.innerText;
+  const paragraphElm = document.querySelector('.plans');
+  return paragraphElm.innerText;
 };
 // getPlans();
 
 export const getGoal = () => {
-  const paragraphEl = document.querySelector('.goal');
-  return paragraphEl.outerText;
+  const paragraphElem = document.querySelector('.goal');
+  return paragraphElem.outerText;
 };
 // getGoal();
