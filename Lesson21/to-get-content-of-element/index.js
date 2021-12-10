@@ -14,10 +14,10 @@ export const getPlans = () => {
   const paragraphEl = document.querySelector('.plans');
   return paragraphEl.innerText;
 };
-// console.log(getPlans());
+console.log(getPlans());
 
 export const getGoal = () => {
   const paragraphEl = document.querySelector('.goal');
   return paragraphEl.outerText;
 };
-// console.log(getGoal());
+console.log(getGoal());
