@@ -4,11 +4,11 @@ export const getTitle = () => {
 };
 // console.log(getTitle());
 
-export const getDescription = () => {
-  const paragraphEl = document.querySelector('.about');
-  return paragraphEl.innerText;
-};
-// console.log(getDescription());
+// export const getDescription = () => {
+//   const paragraphEl = document.querySelector('.about');
+//   return paragraphEl.innerText;
+// };
+// // console.log(getDescription());
 
 export const getPlans = () => {
   const paragraphElm = document.querySelector('.plans');
