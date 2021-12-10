@@ -1,7 +1,7 @@
-export function getTitle() {
+export const getTitle = () => {
   const titleEl = document.querySelector('.title');
   return titleEl.textContent;
-}
+};
 console.log(getTitle());
 
 export const getDescription = () => {
