@@ -6,4 +6,4 @@ export function finishForm() {
   passwordInput.setAttribute('type', 'password');
   myForm.prepend(loginInput);
 }
-finishForm();
+// finishForm();
