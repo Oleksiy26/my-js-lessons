@@ -4,12 +4,12 @@ const passwordInputElem = document.querySelector('#password');
 const emaiErrorElem = document.querySelector('.error-text_email');
 const passwordErrorElem = document.querySelector('.error-text_password');
 
-const isRequared = value => (value ? undefined : 'Requared');
+const isRequired = value => (value ? undefined : 'Required');
 const isEmail = value => (value.includes('@') ? undefined : 'Should be an email');
 
 const validatorsByField = {
-  email: [isRequared, isEmail],
-  password: [isRequared],
+  email: [isRequired, isEmail],
+  password: [isRequired],
 };
 const validate = (fieldName, value) => {
   const validators = validatorsByField[fieldName];
