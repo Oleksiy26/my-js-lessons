@@ -1,12 +1,6 @@
-// const setButton = buttonText => {
-//   const parant = document.querySelector('body');
-//   parant.textContent = `<button>${buttonText}</button>`;
-// };
-
-//  setButton('button text');
-
-export const setButton = buttonText => {
-  const parant = document.querySelector('body');
-  parant.innerHTML = `<button>${buttonText}</button>`;
+const inputElem = document.querySelector('.text-input');
+const onChange = () => {
+  alert(inputElem.value);
 };
-// setButton('button text');
+
+inputElem.addEventListener('change', onChange);
