@@ -1,16 +1,11 @@
-export const getItemsList = () => {
-  const elementsList = document.querySelectorAll('.technology');
-  console.dir(elementsList);
-  return elementsList;
-};
-getItemsList();
+const inputElem = document.querySelector('.search__input');
+const btnElem = document.querySelector('.search__btn');
+// const onChange = () => {
+//   console.log(checkboxElem.value);
+// };
 
-export const getItemsArray = () => {
-  const elementsArray = document.querySelectorAll('.tool');
-  Array.from(elementsArray);
-  console.dir(Array.from(elementsArray));
-  return Array.from(elementsArray);
+const onClick = () => {
+  console.log(inputElem.value);
 };
 
-const elemArray = Array.from(getItemsArray());
-console.log(elemArray);
+btnElem.addEventListener('click', onClick);
