@@ -1,7 +1,10 @@
-export const createButton = buttonText => {
-  const myButton = document.createElement('button');
-  myButton.textContent = buttonText;
-  document.body.append(myButton);
+const btn = document.querySelectorAll('.pagination__page');
+
+const handleClick = event => {
+  console.log(event.target.dataset.pageNumber);
 };
 
-// createButton('Send Email');
+Array.from(btn).map(elem => {
+  elem.addEventListener('click', handleClick);
+  return elem;
+});
