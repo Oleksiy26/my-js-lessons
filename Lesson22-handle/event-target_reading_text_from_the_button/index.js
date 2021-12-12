@@ -1,13 +1,5 @@
-export const getTitleElement = () => {
-  const titleElem = document.querySelector('.title');
-  console.dir(titleElem);
-  return titleElem;
+const parant = document.querySelector('body');
+const handleClick = event => {
+  console.log(event.target.textContent);
 };
-getTitleElement();
-
-export const getInputElement = () => {
-  const inputElem = document.querySelector('input');
-  console.dir(inputElem);
-  return inputElem;
-};
-getInputElement();
+parant.addEventListener('click', handleClick);
