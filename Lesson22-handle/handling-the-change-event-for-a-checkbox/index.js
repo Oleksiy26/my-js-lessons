@@ -1,10 +1,10 @@
-export function finishForm() {
-  const myForm = document.querySelector('.login-form');
-  const loginInput = document.createElement('input');
-  loginInput.type = 'text';
-  loginInput.name = 'login';
-  const passwordInput = document.querySelector('input');
-  passwordInput.type = 'password';
-  myForm.prepend(loginInput);
-}
-// finishForm();
+const checkboxElem = document.querySelector('.task-status');
+// const onChange = () => {
+//   console.log(checkboxElem.value);
+// };
+
+const onChange = () => {
+  console.log(checkboxElem.checked);
+};
+
+checkboxElem.addEventListener('change', onChange);
