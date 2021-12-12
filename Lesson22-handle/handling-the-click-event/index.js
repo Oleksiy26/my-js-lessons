@@ -1,6 +1,6 @@
-export function clearList() {
-  const listForClear = document.querySelector('.categories');
-  listForClear.innerHTML = '';
-}
+const alertButton = document.querySelector('.create-btn');
 
-// clearList();
+const alertMessage = () => {
+  alert('done');
+};
+alertButton.addEventListener('click', alertMessage);
