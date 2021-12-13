@@ -46,7 +46,7 @@ const onSeatSelect = event => {
   console.log(seat);
   const selectedSeatElem = document.querySelector('.board');
 
-  selectedSeatElem.textContent = `S: ${sector}, L: ${line}, S: ${seat},`;
+  selectedSeatElem.textContent = `S ${sector},- L ${line},- S ${seat},`;
 };
 
 arenaElem.addEventListener('click', onSeatSelect);
