@@ -33,21 +33,6 @@ const renderTasks = tasksList => {
 
 renderTasks(tasks);
 
-const hendleClick = () => {
-  const inputText = document.querySelector('.task-input');
-  const newEvent = {
-    id: String(Math.floor(Math.random() * (20 - 6)) + 6),
-    text: inputText.value,
-    done: false,
-  };
-  if (inputText.value) {
-    tasks.push(newEvent);
-  }
-  inputText.value = '';
-  listElem.innerHTML = '';
-  renderTasks(tasks);
-};
-
 const onCheked = event => {
   const isCheckbox = event.target.classList.contains('list__item-checkbox');
   if (!isCheckbox) {
@@ -60,6 +45,21 @@ const onCheked = event => {
       key.done = event.target.checked;
       return key.done;
     });
+  listElem.innerHTML = '';
+  renderTasks(tasks);
+};
+
+const hendleClick = () => {
+  const inputText = document.querySelector('.task-input');
+  const newEvent = {
+    id: String(Math.floor(Math.random() * (20 - 6)) + 6),
+    text: inputText.value,
+    done: false,
+  };
+  if (inputText.value && isNaN(inputText.value)) {
+    tasks.push(newEvent);
+  }
+  inputText.value = '';
   listElem.innerHTML = '';
   renderTasks(tasks);
 };
