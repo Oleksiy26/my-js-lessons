@@ -5,6 +5,6 @@ const clockForm = new Intl.DateTimeFormat('en', {
   hour12: false,
 });
 
-const getGreenwichTime = date => clockForm.format(date);
+export const getGreenwichTime = date => clockForm.format(date);
 
 console.log(getGreenwichTime(new Date()));
