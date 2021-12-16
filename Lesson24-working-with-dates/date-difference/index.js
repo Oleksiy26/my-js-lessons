@@ -9,4 +9,3 @@ export const getDiff = (startDate, endDate) => {
 
   return diff;
 };
-
