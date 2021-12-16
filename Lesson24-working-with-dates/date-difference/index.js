@@ -1,13 +1,12 @@
 export const getDiff = (startDate, endDate) => {
-  const previousDate = new Date(startDate);
-  const nextDate = new Date(endDate);
-  let result = nextDate - previousDate;
-  const days = Math.floor(result / (1000 * 60 * 60 * 24));
+  const result = endDate.getTime() - startDate.getTime();
+
+  const days = Math.floor((result / (1000 * 60 * 60 * 24)) % 30);
   const hours = Math.floor((result / (1000 * 60 * 60)) % 24);
   const minutes = Math.floor((result / (1000 * 60)) % 60);
   const seconds = Math.floor((result / 1000) % 60);
-  result = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 
-  return result;
+  return `${days}d ${hours}h ${minutes}m ${seconds}s`;
 };
-// console.log(getDiff(new Date(), new Date(2022, 0, 26)));
+
+console.log(getDiff(new Date(), new Date(2022, 0, 26)));
