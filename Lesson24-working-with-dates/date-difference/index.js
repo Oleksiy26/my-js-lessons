@@ -9,4 +9,4 @@ export const getDiff = (startDate, endDate) => {
 
   return diff;
 };
-// console.log(getDiff(2021, new Date(2022, 0, 26)));
+
