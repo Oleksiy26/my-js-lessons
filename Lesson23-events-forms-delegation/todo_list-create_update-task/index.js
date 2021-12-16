@@ -51,6 +51,7 @@ const onCheked = event => {
 
 const hendleClick = () => {
   const inputText = document.querySelector('.task-input');
+
   const newEvent = {
     id: String(Math.floor(Math.random() * (20 - 6)) + 6),
     text: inputText.value,
