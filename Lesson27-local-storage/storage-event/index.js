@@ -1,9 +1,30 @@
-const weekDays = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'St'];
+const counterElem = document.querySelector('.counter');
+const counterValueElem = document.querySelector('.counter__value');
 
-export const dayOfWeek = (date, days) => {
-  const day = new Date(date).getDate();
-  const dateInFuture = new Date(date).setDate(day + days);
-  console.log(dateInFuture);
-  return weekDays[new Date(dateInFuture).getDay()];
+const onCuonterChange = event => {
+  const isButton = event.target.classList.contains('counter__button');
+  console.log(isButton);
+  if (!isButton) {
+    return;
+  }
+  const { action } = event.target.dataset;
+  console.log(action);
+  const oldValue = Number(counterValueElem.textContent);
+
+  const newValue = action === 'decrease' ? oldValue - 1 : oldValue + 1;
+
+  localStorage.setItem('counterValue', newValue);
+
+  counterValueElem.textContent = newValue;
 };
-console.log(dayOfWeek(new Date(2021, 11, 16), 9));
+counterElem.addEventListener('click', onCuonterChange);
+
+const onStorageChange = event => {
+  console.log(event);
+  counterValueElem.textContent = event.newValue;
+};
+window.addEventListener('storage', onStorageChange);
+const onDocumentLoaded = () => {
+  counterValueElem.textContent = localStorage.getItem('counterValue') || 0;
+};
+document.addEventListener('DOMContentLoaded', onDocumentLoaded);
