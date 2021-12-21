@@ -37,5 +37,5 @@ export const shmoment = date => {
   return calculator;
 };
 console.log(
-  shmoment(new Date(2021, 11, 21, 2, 37, 15, 211)).add('minutes', 50).add('month', 10).result(),
+  shmoment(new Date(2021, 11, 21, 2, 37, 15, 211)).add('minutes', 50).add('months', 2).result(),
 );
