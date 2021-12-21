@@ -18,7 +18,7 @@ const setMethodNames = {
   milliseconds: 'setMilliseconds',
 };
 
-const shmoment = date => {
+export const shmoment = date => {
   let result = new Date(date);
   const calculator = {
     add(units, value) {
