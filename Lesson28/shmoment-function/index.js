@@ -1,6 +1,6 @@
 const getMethodNames = {
   years: 'getFullYear',
-  month: 'getMonth',
+  months: 'getMonth',
   days: 'getDate',
   hours: 'getHours',
   minutes: 'getMinutes',
@@ -10,7 +10,7 @@ const getMethodNames = {
 
 const setMethodNames = {
   years: 'setFullYear',
-  month: 'setMonth',
+  months: 'setMonth',
   days: 'setDate',
   hours: 'setHours',
   minutes: 'setMinutes',
@@ -18,7 +18,7 @@ const setMethodNames = {
   milliseconds: 'setMilliseconds',
 };
 
-export const shmoment = date => {
+const shmoment = date => {
   let result = new Date(date);
   const calculator = {
     add(units, value) {
@@ -37,5 +37,5 @@ export const shmoment = date => {
   return calculator;
 };
 console.log(
-  shmoment(new Date(2021, 11, 21, 2, 37, 15, 211)).add('minutes', 50).add('days', 10).result(),
+  shmoment(new Date(2021, 11, 21, 2, 37, 15, 211)).add('minutes', 50).add('month', 10).result(),
 );
