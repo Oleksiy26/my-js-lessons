@@ -30,4 +30,7 @@ const onImageLoaded = (error, imgElem) => {
   sizeElem.textContent = `${width} x ${height}`;
 };
 
-// addImage(imgSrc, onImageLoaded);
+addImage(
+  'https://gromcode.s3.eu-central-1.amazonaws.com/courses/front-end/lessons/javascript-full/lesson29/task1/example.png',
+  onImageLoaded,
+);
