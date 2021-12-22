@@ -16,7 +16,7 @@ export const addImage = (imgSrc, callback) => {
 };
 
 const imgSrc =
-  'https://p.bigstockphoto.com/GeFvQkBbSLaMdpKXF1Zv_bigstock-Aerial-View-Of-Blue-Lakes-And--227291596.jpg';
+  'https://gromcode.s3.eu-central-1.amazonaws.com/courses/front-end/lessons/javascript-full/lesson29/task1/example.png';
 
 const onImageLoaded = (error, imgElem) => {
   if (error) {
