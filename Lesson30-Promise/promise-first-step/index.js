@@ -20,10 +20,11 @@ export const addImage = imgSrc => {
 };
 
 const resultPromise = addImage(imgSrc);
-resultPromise
-  .then(data => {
-    console.log(data);
-  })
-  .catch(err => {
-    console.log(err);
-  });
+
+resultPromise.then(data => {
+  console.log(data);
+});
+
+resultPromise.catch(err => {
+  console.log(err);
+});
