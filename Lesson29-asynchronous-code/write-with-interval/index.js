@@ -1,6 +1,15 @@
-export const mult = a => b => a * b;
-export const twice = mult(2);
-export const triple = mult(3);
+export const pinger = (num, period) => {
+  let i = num;
+  console.log('Ping');
+  const interval = setInterval(() => {
+    if (--i > 0) {
+      console.log('Ping');
+    } else {
+      clearInterval(interval);
+    }
+  }, period);
+};
 
-const result = triple(9);
-console.log(result);
+console.log(pinger(5, 1000));
+
+// console.log(pinger(7, 150));
