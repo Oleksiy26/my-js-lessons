@@ -13,20 +13,17 @@ export const addImage = imgSrc => {
       const { width, height } = imgElem;
       resolve({ width, height });
     });
-    imgElem.addEventListener('error', () => {
-      const error = new Error('Image load is failed');
-      reject(error);
-    });
+    imgElem.addEventListener('error', () => reject(new Error('Image load is failed')));
   });
   return prom;
 };
 
-const resultPromise = addImage(imgSrc);
+// const resultPromise = addImage(imgSrc);
 
-resultPromise
-  .then(data => {
-    console.log(data);
-  })
-  .catch(error => {
-    console.log(error);
-  });
+// resultPromise
+//   .then(data => {
+//     console.log(data);
+//   })
+//   .catch(error => {
+//     console.log(error);
+//   });
