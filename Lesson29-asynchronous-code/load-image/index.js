@@ -5,12 +5,7 @@ export const addImage = (imgSrc, callback) => {
   const containerElem = document.querySelector('.page');
   containerElem.append(imgElem);
 
-  const onImageLoaded = () => {
-    const { width, height } = imgElem;
-    callback(null, { width, height });
-  };
-
-  imgElem.addEventListener('load', onImageLoaded);
+  imgElem.addEventListener('load', () => callback(null, imgElem));
 
   imgElem.addEventListener('error', () => callback('Image load is failed'));
 };
@@ -29,8 +24,3 @@ const onImageLoaded = (error, imgElem) => {
 
   sizeElem.textContent = `${width} x ${height}`;
 };
-
-addImage(
-  'https://gromcode.s3.eu-central-1.amazonaws.com/courses/front-end/lessons/javascript-full/lesson29/task1/example.png',
-  onImageLoaded,
-);
