@@ -1,6 +1,3 @@
-const imgSrc =
-  'https://p.bigstockphoto.com/GeFvQkBbSLaMdpKXF1Zv_bigstock-Aerial-View-Of-Blue-Lakes-And--22729159.jpg';
-
 export const addImage = imgSrc => {
   const prom = new Promise((resolve, reject) => {
     const imgElem = document.createElement('img');
