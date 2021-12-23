@@ -6,15 +6,15 @@ export const requestUserData = userId => {
       }, 500);
     } else {
       setTimeout(() => {
-        resolve({ name: 'John', age: 17, email: `${userId}@exemple.com`, userId: 'userid777' });
+        resolve({ name: 'John', age: 17, email: `${userId}@exemple.com`, userId });
       }, 1000);
     }
   });
   return request;
 };
 
-// requestUserData('broken')
-//   .then(data => {
-//     console.log(data);
-//   })
-//   .catch(err => console.log(err));
+requestUserData('userid777')
+  .then(data => {
+    console.log(data);
+  })
+  .catch(err => console.log(err));
