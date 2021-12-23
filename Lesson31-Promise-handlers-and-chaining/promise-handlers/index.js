@@ -6,15 +6,16 @@ export const requestUserData = userId => {
       }, 500);
     } else {
       setTimeout(() => {
-        resolve({ name: 'John', age: 17, userId, email: `${userId}@exemple.com` });
+        resolve({ name: 'John', age: 17, userId, email: `${userId}@example.com` });
       }, 1000);
     }
   });
   return request;
 };
 
-requestUserData('userid777')
-  .then(data => {
-    console.log(data);
-  })
-  .catch(err => console.log(err));
+// console.log(requestUserData('userid777'));
+// requestUserData('userid777')
+//   .then(data => {
+//     console.log(data);
+//   })
+//   .catch(err => console.log(err));
