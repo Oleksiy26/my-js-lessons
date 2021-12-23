@@ -1,32 +1,36 @@
-/* ===> 1 <=== */
-
-/*
- * successPromise должен зарезолвить число 67
- * Ответьте себе на вопрос, какой тип данных имеет переменная successPromise
- */
-
 const successPromise = new Promise(resolve => {
-  /* ...code here */
-  resolve(67);
+  resolve(32);
 });
 
 /*
- * допишите обработчик успешного промиса (аргументы и тело ф-ции onSuccess)
- * чтобы в консоль вывелся квадрат числа, которое резолвиться из successPromise
+ * исправь цепочку промисов, чтобы в последнем обработчике вывелось нужное число
  */
 
-successPromise.then(function onSuccess(number) {
-  /* ...code here */
-  console.log(number ** 2);
-});
+successPromise
+  .then(number => {
+    const halfNumber = number / 2;
+    return halfNumber;
+  })
+  .then(number => {
+    /* fix this handler */
+    const squaredNumber = number * number;
+    return squaredNumber;
+  })
+  .then(result => {
+    console.log(result); // 256
+  });
 
 /*
- * в обработчике ошибок промиса (ф-ция onError внутри .catch()) выведите в консоль текст 'I am an error'
- * текст вывелся в консоль?
- * подумайте почему
- * потому что reject is not defined!
+ * исправь цепочку промисов, чтобы в последнем обработчике вывелось нужное число
  */
-successPromise.catch(function onError() {
-  /* ...code here */
-  console.log('I am an error');
-});
+successPromise
+  .then(number => {
+    const increasedNumber = number * 10;
+    return increasedNumber;
+  })
+  .then(result => {
+    console.log(result); // 320
+  });
+console.log(
+  '!!! Обрати внимание, что этот текст вывелся самым первым. Ведь это синхронный код, а промисы - асинхронны !!!',
+);
