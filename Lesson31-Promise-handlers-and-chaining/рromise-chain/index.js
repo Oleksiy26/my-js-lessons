@@ -17,4 +17,4 @@ export const asyncCalculator = num =>
     }),
   );
 
-asyncCalculator(2);
+// asyncCalculator(2);
