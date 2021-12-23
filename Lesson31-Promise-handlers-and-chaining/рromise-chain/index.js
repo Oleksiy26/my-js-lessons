@@ -11,14 +11,10 @@ export const asyncCalculator = num =>
         console.log(`Squared value: ${squared}`);
         resolve(squared);
       }, 500);
-    }).then(
-      value =>
-        new Promise(resolve => {
-          const doubled = value * 2;
-          console.log(`Doubled value: ${doubled}`);
-          resolve(doubled);
-        }),
-    ),
+    }).then(value => {
+      const doubled = value * 2;
+      console.log(`Doubled value: ${doubled}`);
+    }),
   );
 
 // asyncCalculator(2);
