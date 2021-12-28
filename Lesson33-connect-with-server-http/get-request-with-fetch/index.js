@@ -9,8 +9,9 @@ userAvatarElem.src = defaultAvatar;
 const showUserBtnElem = document.querySelector('.name-form__btn');
 const userNameInputElem = document.querySelector('.name-form__input');
 
-export const fetchUserData = userName => {
-  return fetch(`https://api.github.com/users/${userName}`).then(response => response.json());
+export const fetchUserData = async userName => {
+  const response = await fetch(`https://api.github.com/users/${userName}`);
+  await response.json();
 };
 
 export const renderUserData = userData => {
