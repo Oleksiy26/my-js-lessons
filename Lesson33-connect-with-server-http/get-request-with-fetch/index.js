@@ -9,8 +9,8 @@ userAvatarElem.src = defaultAvatar;
 const showUserBtnElem = document.querySelector('.name-form__btn');
 const userNameInputElem = document.querySelector('.name-form__input');
 
-const fetchUserData = userName => {
-  return fetch(`https://api.github.com/users/${userName}`).then(response => response.json());
+const fetchUserData = USERNAME => {
+  return fetch(`https://api.github.com/users/${USERNAME}`).then(response => response.json());
 };
 
 const renderUserData = userData => {
@@ -21,8 +21,8 @@ const renderUserData = userData => {
 };
 
 const onSearchUser = () => {
-  const userName = userNameInputElem.value;
-  fetchUserData(userName).then(userData => renderUserData(userData));
+  const USERNAME = userNameInputElem.value;
+  fetchUserData(USERNAME).then(userData => renderUserData(userData));
 };
 
 showUserBtnElem.addEventListener('click', onSearchUser);
