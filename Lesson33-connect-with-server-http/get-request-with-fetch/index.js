@@ -9,18 +9,18 @@ userAvatarElem.src = defaultAvatar;
 const showUserBtnElem = document.querySelector('.name-form__btn');
 const userNameInputElem = document.querySelector('.name-form__input');
 
-const fetchUserData = userName => {
+export const fetchUserData = userName => {
   return fetch(`https://api.github.com/users/${userName}`).then(response => response.json());
 };
 
-const renderUserData = userData => {
-  const { avatar_url, name, location } = userData;
-  userAvatarElem.src = avatar_url;
+export const renderUserData = userData => {
+  const { avatar_url: avatar, name, location } = userData;
+  userAvatarElem.src = avatar;
   userNameElem.textContent = name;
-  userLocationElem.textContent = location;
+  userLocationElem.textContent = location ? `from ${location} ` : '';
 };
 
-const onSearchUser = () => {
+export const onSearchUser = () => {
   const userName = userNameInputElem.value;
   fetchUserData(userName).then(userData => renderUserData(userData));
 };
