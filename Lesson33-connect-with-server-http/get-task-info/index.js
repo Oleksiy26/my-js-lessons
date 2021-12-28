@@ -1,22 +1,17 @@
-const promiseNumber1 = Promise.resolve(67);
-const promiseNumber2 = Promise.resolve(23);
-const promiseNumber3 = Promise.resolve(8);
+const baseUrl = 'https://5e5cf5eb97d2ea0014796f01.mockapi.io/api/v1/tasks';
 
-/*
- * создай промис и присвой переменной resultPromise
- * чтобы в консоль вывелась сумма всех чисел из трех промисов
- */
+export function getTasksList() {
+  return fetch(baseUrl).then(response => response.json());
+}
+export function getTaskById(taskId) {
+  return fetch(`${baseUrl}/${taskId}`).then(response => response.json());
+}
 
-// update code below
-const getAllProm = (...arg) => Promise.all(arg);
+// // examples
+// getTasksList().then(tasksList => {
+//   console.log(tasksList); // array of the task objects - [ {'id':'1', 'done':false ... }, {'id':'2', 'done':true ... }, ...]
+// });
 
-export const resultPromise = getAllProm(promiseNumber1, promiseNumber2, promiseNumber3);
-resultPromise
-  .then(numbersList => {
-    console.log(numbersList);
-    const sum = numbersList.reduce((acc, num) => acc + num, 0);
-    return sum;
-  })
-  .then(result => {
-    console.log(result); // 98
-  });
+// getTaskById('2').then(taskData => {
+//   console.log(taskData); // {'id':'2', 'done':true ... }
+// });
