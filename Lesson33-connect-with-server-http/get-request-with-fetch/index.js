@@ -2,8 +2,7 @@ const userAvatarElem = document.querySelector('.user__avatar');
 const userNameElem = document.querySelector('.user__name');
 const userLocationElem = document.querySelector('.user__location');
 
-const defaultAvatar =
-  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzChCtYoqdA8g-QnA5hk5eh_K9ejNbQouIIQWLRcqfVxxSn9SweYOkWoWkxuWhm_L5Hqk&usqp=CAU';
+const defaultAvatar = 'https://avatars3.githubusercontent.com/u10001';
 
 userAvatarElem.src = defaultAvatar;
 
