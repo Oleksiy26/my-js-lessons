@@ -1,17 +1,35 @@
-const baseUrl = 'https://5e5cf5eb97d2ea0014796f01.mockapi.io/api/v1/tasks';
+const baseUrl = 'https://61da71d5ce86530017e3cd56.mockapi.io/api/v1/users';
 
-export function getTasksList() {
+export function getUsersList() {
   return fetch(baseUrl).then(response => response.json());
 }
-export function getTaskById(taskId) {
-  return fetch(`${baseUrl}/${taskId}`).then(response => response.json());
+
+export function getUserById(userId) {
+  return fetch(`${baseUrl}/${userId}`).then(response => response.json());
 }
 
-// // examples
-// getTasksList().then(tasksList => {
-//   console.log(tasksList); // array of the task objects - [ {'id':'1', 'done':false ... }, {'id':'2', 'done':true ... }, ...]
-// });
+export function createUser(userData) {
+  return fetch(baseUrl, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json;charset=utf-8',
+    },
+    body: JSON.stringify(userData),
+  });
+}
 
-// getTaskById('2').then(taskData => {
-//   console.log(taskData); // {'id':'2', 'done':true ... }
-// });
+export function deleteUser(userId) {
+  return fetch(`${baseUrl}/${userId}`, {
+    method: 'DELETE',
+  });
+}
+
+export function updateUser(userId, userData) {
+  return fetch(`${baseUrl}/${userId}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json;charset=utf-8',
+    },
+    body: JSON.stringify(userData),
+  });
+}
