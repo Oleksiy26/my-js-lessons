@@ -2,7 +2,7 @@ import { renderTasks } from './renderer.js';
 import { deleteTask, getTasksList } from './tasksGeteway.js';
 import { setItem } from './storage.js';
 
-export const onCloseBtn = e => {
+export const onDelateTask = e => {
   const isDeleteBtn = e.target.classList.contains('list-item__delete-btn');
   if (!isDeleteBtn) {
     return;
