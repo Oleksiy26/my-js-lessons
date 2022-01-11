@@ -1,35 +1,37 @@
-const baseUrl = 'https://61da71d5ce86530017e3cd56.mockapi.io/api/v1/users';
+import { fetchUserData, fetchRepositories } from './gateways.js';
+import { renderUserData } from './user.js';
+import { renderRepos, cleanReposList } from './repos.js';
+import { showSpinner, hideSpinner } from './spinner.js';
 
-export function getUsersList() {
-  return fetch(baseUrl).then(response => response.json());
-}
+const defaultUser = {
+  avatar_url: 'https://avatars3.githubusercontent.com/u1000',
+  name: '',
+  location: '',
+};
+renderUserData(defaultUser);
 
-export function getUserById(userId) {
-  return fetch(`${baseUrl}/${userId}`).then(response => response.json());
-}
+const showUserBtnElem = document.querySelector('.name-form__btn');
+const userNameInputElem = document.querySelector('.name-form__input');
 
-export function createUser(userData) {
-  return fetch(baseUrl, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json;charset=utf-8',
-    },
-    body: JSON.stringify(userData),
-  });
-}
+const onSearchUser = () => {
+  cleanReposList();
+  showSpinner();
+  const userName = userNameInputElem.value;
+  fetchUserData(userName)
+    .then(userData => {
+      renderUserData(userData);
+      return userData.repos_url;
+    })
+    .then(url => fetchRepositories(url))
+    .then(reposList => {
+      renderRepos(reposList);
+    })
+    .catch(err => {
+      alert(err.message);
+    })
+    .finally(() => {
+      hideSpinner();
+    });
+};
 
-export function deleteUser(userId) {
-  return fetch(`${baseUrl}/${userId}`, {
-    method: 'DELETE',
-  });
-}
-
-export function updateUser(userId, userData) {
-  return fetch(`${baseUrl}/${userId}`, {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json;charset=utf-8',
-    },
-    body: JSON.stringify(userData),
-  });
-}
+showUserBtnElem.addEventListener('click', onSearchUser);
