@@ -1,4 +1,4 @@
-const fetchUser = async userId => {
+export const fetchUser = async userId => {
   try {
     const respoUser = await fetch(`https://api.github.com/users/${userId}`);
     if (!respoUser.ok) {
