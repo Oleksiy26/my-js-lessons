@@ -1,6 +1,6 @@
 export const fetchUser = async userId => {
   try {
-    const response = await fetch(`https://api.github.com/users/${userId}`);
+    const response = await fetch(`https://api.github.com/user/${userId}`);
     if (!response.ok) {
       return null;
     }
@@ -11,6 +11,6 @@ export const fetchUser = async userId => {
   }
 };
 
-fetchUser('facebook')
+fetchUser('github')
   .then(userData => console.log(userData))
   .catch(err => alert(err.message));
