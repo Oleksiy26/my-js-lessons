@@ -19,6 +19,7 @@ const onSearchUser = async () => {
   const userName = userNameInputElem.value;
   try {
     const userData = await fetchUserData(userName);
+    console.log(userData);
     renderUserData(userData);
     const reposList = await fetchRepositories(userData.repos_url);
     renderRepos(reposList);
